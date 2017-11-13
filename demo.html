@@ -8,19 +8,12 @@
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
-
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-
-		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
@@ -28,184 +21,329 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+</head>
 
 	<body>
 
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+ 		<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+				<section>
+					<h2>Theory Of Computation</h2>
+					<hr>
+					<p><em>Application of Turing Machine in <br> Encryption & Decryption</em></p>
 				</section>
 
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
+					<h3>Submitted to :- </h3>
+ 					<h4>Dr. Yogita Thakran</h4>
+					<p> Department of Information & Technology , U.I.E.T </p>
+				</section>
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h3> Why should we use turing machine for encryption ?</h3>
+						<p class="fragment">Almost all known cryptographic constructions for computing on encrypted data model algorithms as circuits instead of Turing machines.
+							 There are at least two unfortunate consequences of modeling algorithms as circuits.</p>
+          </section>
+					<section>
+						<p>1. The first consequence of using circuits is that evaluating an algorithm A on encrypted data is at least as slow as the worst-case running time of algorithm A on all inputs of a certain size. Ideally, the runtime of A on input x should be the time A takes to run on x. The reason for this slowdown is that all the known transformations from Turing machines to circuits essentially work by unrolling loops to their worst-case runtime, and by considering all branches of a computation.
+            </p>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<p>2. The second consequence is that the size of the token is as large as the running time of the algorithm, instead of depending only on the description of the algorithm, which can be much shorter.
+							 Since the evaluator can compute a Turing machine M in input-specific runtime, it means that the evaluator necessarily learns the runtime of M on specific inputs.
+           </p>
+
+					</section>
+				</section>
+
+				<section>
+					<h3>CRYPTOGRAPHY & ENCRYPTION</h3>
+					<p>Cryptography is the practice and study of hiding information. In cryptography , encryption is the process of transforming information (referred to as plain text) using an algorithm (called cipher) to make it unreadable to anyone except those possessing special knowledge, usually referred to as a key. The result of the process is encrypted information (in cryptography, referred to as cipher text).
+					</p>
+				</section>
+
+				<section>
+				<section>
+					<h2>Turing Machine</h2>
+					<p>
+						<img style="float:left; margin:10px;" width="438" height="438" data-src="turing_machine.jpg" alt="Down arrow">
+						The machine can be described as a finite state control device (meaning that it has a finite number of states that control its operations), with a tape of unlimited length, divided into squares, upon which symbols may be written or stored.
+					</p>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
+					<p>A sequence of actions can take place when a symbol is scanned by a read/write head and the machine is in a certain state. The sequence of actions is the "program."
+          </p>
+					<p>
+				 At any point in time, the finite state control will be in one state and the tape head will be scanning a single symbol, or square, on the tape. On the basis of this symbol and the current state, it will write a symbol on the square, or choose to leave the symbol alone, move the tape one square to the left or the right, and change to a "new" state. All this constitutes a "move" of the basic machine.
+        </p>
+			  </section>
+				<section>
+				<h3>Formal Defination</h3>
+        <p>
+				A TM can be formally described as a 7-tuple <br>
+				(Q, X, ∑, δ, q0, B, F) where : − <br>
+        Q is a finite set of states <br>
+        X is the tape alphabet <br>
+        ∑ is the input alphabet <br>
+        δ is a transition function; <br>
+			  δ : Q × X → Q × X × {Left_shift, Right_shift}. <br>
+        q0 is the initial state <br>
+        B is the blank symbol <br>
+        F is the set of final states <br>
+        </p>
+				</section>
+				</section>
+				<section>
+        <section>
+					<h3>THE ALGORITHMS</h3>
+					<p>
+Now lets see how the algorithm works. As seen earlier, the algorithm works using the basic working of the Turing machine itself. Here, the data to be encrypted is taken in a string and then converted into a character array. Then, the Turing machine principle is applied to the array, considering the array as the tape of the machine, with the array elements correspondingto the tape cells. Then, the Turing machine can be applied.
+</p>
+</section>
+<section>
+<p>
+Here, we use a 5-tuple.
+The elements are: <br>
+ < istate, input, ostate, replace, shift > <br>
+</p>
+<ul>
+<li>The ‘istate’ refers to the current state at which the machine is operating. The ‘input’ refers to the input character under consideration.</li>
+<li>The ‘ostate’ gives which state the machine must shift to and the ‘replace’ gives the character that replaces the input at the current cell.</li>
+<li>The ‘shift’ can have three values. If it is -1, the head moves left (previous element is taken). <br></li>
+</ul>
+</section>
+<section>
+<img src="algo1.png" alt="">
+<ul>
+<li>
+If it is 0, the head stays in its position (no change in element under consideration). If it is 1, the head moves right (next element is taken). </li>
+<li>The initial state and initial tape position are defined as functions of the length of the input string. Now, due to the to-and-fro action of the head, the tuples might act in such a way that the process goes on almost infinitely (atleast for along time).</li>
+</section>
+
+<section>
+	<ul>
+<li>This can cause a very high rate of delay during page retrievals. So, we have to go for a controlled procedure. For that, we are fixing another counter, which is also a function of the string length, to iterate.</li>
+<li>Once the iteration is finished, the encryptor automatically ends the process. The main advantage is that, unless somebody knows all the combinations (for all the acceptable input characters and the states), along with the procedure to get the initial state and counter, it is very difficult to decrypt the code.</li>
+</ul>
+</section>
+				</section>
+
+				<section>
+					<section>
+						<h4>Encryption</h4>
+					  First we use a simple encryption scheme in which we encrypt our string using static form of encryption in which a word is simply replaced by its encrypted replica and the output is shown in Table 1. Here is the design of the static encryptor that encrypt the string using simple encryption scheme. 		<br>
+							Post-Turing instruction-abbreviations used for this example: <br>
 					</section>
+					<section style="font-size:32px; text-align:left;">
+								<b>R</b> = Move tape right. <br>
+								<b>L</b> = Move tape Left.  <br>
+								<b>Z</b> = Read tape symbol. <br>
+								<b>H</b>=Stop machine after successful encryption. <br>
+								<b>S</b> = Replace output of instruction ‘F’ with original symbol on Tape. <br>
+								<b>F</b> = Replace tape symbol with its binary form replica. <br>
+								<b>Jxxx</b> =unconditionally go to the instruction xxx. <br>
+								<b>JΔxxx</b> = If tape symbol is ‘Δ‘go to ‘M’ state else go to next state. <br>
+								<b>C</b> = Check for respected replica of the symbol from replica set. <br>
+								<b>JTxxx</b> = Go to next instruction if the respected replica is present in the instruction ‘C’. <br>
+								<b>E</b> = Stop the machine giving an error. <br>
+								<b>M</b>= Read 10 tape symbols if all are ‘Δ’ go to ‘H’ else go to next instruction. <br>
+
+					</section>
+           <section>
+		        	<img src="turing1encrypt.png" style="float:left; margin:0px;" width="630" height="600" alt="">
+							<img src="table1.png" style="float:right; margin:0px;" width="300" height="608" alt="">
+		        </section>
+	           <section style="text-align:center;">
+							<h4> Sample input: </h4>
+               <p>This year our profit is six million </p>
+             <h4>Sample output: </h4>
+             <p style="text-align:justify;">
+							 10100010000100110011Δ11001001010000110010Δ<br>
+							 011111010110010Δ10000100100111100110010Δ <br>
+							 01101000100110011Δ100110100111000Δ <br>
+							 01101010010110001100010010111101110ΔΔΔΔΔΔΔΔΔΔ</p>
+			        </section>
 				</section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+				<section >
+					<section>
+						<h4>Decryption</h4>
+						<p>Now we send this encrypted string at our destination and then we decrypt it back to its original form using the static decryptor that uses a simple decryption scheme.</p><br>
+						<p>Post-Turing instruction-abbreviations used for this example</p>
+					</section>
+					<section style="font-size:32px; text-align:left;">
+R= Move tape right. <br>
+L= Move tape Left. <br>
+Z= Read tape symbol. <br>
+H= Stop machine after successful encryption. <br>
+E= Stop the machine giving an error. <br>
+C= Check for respected symbol for the replica. <br>
+F= Place symbol at the start of the tape if another symbol is already present place it next to the available place. <br>
+P= Read 5 successive 0’s and 1’s combination and send it to the next state. <br>
+Jxxx = unconditionally go to the instruction Jxxx <br>
+JΔxxx= If tape symbol is ‘Δ‘go to ‘M’ state else go to next state. <br>
+JT= Go to next instruction if the respected replica is present. <br>
+M= Read 10 tape symbols if all are ‘Δ’ go to ‘H’ else go to next instruction. <br>
+					</section>
+						<section>
+							<img src="turingmachine2decrypt.png" alt="">
 						</section>
-						```
-					</script>
+           <section>
+						 <h4>Sample input: </h4>
+						   <p>10100010000100110011Δ11001001010000110010Δ<br>
+							 011111010110010Δ10000100100111100110010Δ<br>
+							 01101000100110011Δ100110100111000Δ<br>
+							 01101010010110001100010010111101110ΔΔΔΔΔΔΔΔΔΔ</p>
+            <h4>Sample output:</h4>
+            <p>This year our profit is six million</p>
+           </section>
 				</section>
 
 				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
+					<section>
+					<h4>Encryption using garbage set</h4>
+					<p>In this , we use a dynamic encryption scheme in which we replace the symbol with its replica but we also
+          insert a small amount of garbage in it so that it is not easy to recognize the original message.
+					</p>
 					</section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+						Garbage Set: <br>
+           { Ò Ø ü â ä à å ç £ ø º ª ¿ ® ¬ ¡ © ¦ ¢ ¤ ð ß! @ # <br>$ % ^ & * () _ - + = { } : " ? > < , . / ‘;] [\ | }
+					 <br>
+					 Post-Turing instruction-abbreviations used for this example:
 					</section>
-				</section>
+					<section style="font-size:32px; text-align:left;">
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
+R= Move tape right. L= Move tape Left. <br>
+Z= Read tape symbol. <br>
+H= Stop machine after successful encryption. <br>
+S= Replace output of instruction ‘P’ with original symbol on
+tape. <br>
+P= Concatenate 5 random characters from garbage set at the
+end of replica. <br>
+F= Replace tape symbol with its binary form replica. <br>
+Jxxx= unconditionally go to the instruction xxx. <br>
+JΔxxx= If tape symbol is ‘Δ‘go to ‘M’ state else go to next <br>
+state.
+C= Check for respected replica of the symbol from replica set. <br>
+JTxxx= Go to next instruction if the respected replica is <br>
+present in the instruction ‘C’.
+E= Stop the machine giving an error. <br>
+M= Read 10 tape symbols if all are ‘Δ’go to ‘H’ else go to <br>
+next instruction.
+					</section>
+					<section>
+						<img src="dynamic1.png" alt="">
+					</section>
+					<section>
+						<h4>Sample input : </h4>
+            <p>Vanguard six this is bravo one we are ready </p>
+            <h4>Sample output: </h4>
+            <p>
+						10110@*^$(00001>"{^$01110&%+<#00111,.;/]00001}:">*10101@$#&^10010.[;',00100Δ10011$^#*%01001!)(&^110
+            00Δ10100!)*%*01000!^%&%01001<:{(&10011Δ01001)*^$@10011Δ00010<>)(^10010*)^$*00001*&*%$10110_)(&*0
+            1111Δ01111<>?:"01110$%^#@00101Δ10111*(&%*00101Δ00001;'[].10010$%#^%00101Δ10010@#$#@00101(^*%#00
+            001;'[].00100$&#*%11001(^*%#00001;'[]!ΔΔΔΔΔΔΔΔΔΔ</p>
+					</section>
 				</section>
 
 				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
+ 				 <section>
+ 				 <h4>Encryption using garbage set</h4>
+ 				 <p>In this , we use a dynamic encryption scheme in which we replace the symbol with its replica but we also
+ 				 insert a small amount of garbage in it so that it is not easy to recognize the original message.
+ 				 </p>
+ 				 </section>
+ 				 <section>
+ 					 Garbage Set: <br>
+ 					{ Ò Ø ü â ä à å ç £ ø º ª ¿ ® ¬ ¡ © ¦ ¢ ¤ ð ß! @ # <br>$ % ^ & * () _ - + = { } : " ? > < , . / ‘;] [\ | }
+ 					<br>
+ 					Post-Turing instruction-abbreviations used for this example:
+ 				 </section>
+ 				 <section style="font-size:32px; text-align:left;">
 
+ R= Move tape right. L= Move tape Left. <br>
+ Z= Read tape symbol. <br>
+ H= Stop machine after successful encryption. <br>
+ S= Replace output of instruction ‘P’ with original symbol on
+ tape. <br>
+ P= Concatenate 5 random characters from garbage set at the
+ end of replica. <br>
+ F= Replace tape symbol with its binary form replica. <br>
+ Jxxx= unconditionally go to the instruction xxx. <br>
+ JΔxxx= If tape symbol is ‘Δ‘go to ‘M’ state else go to next <br>
+ state.
+ C= Check for respected replica of the symbol from replica set. <br>
+ JTxxx= Go to next instruction if the respected replica is <br>
+ present in the instruction ‘C’.
+ E= Stop the machine giving an error. <br>
+ M= Read 10 tape symbols if all are ‘Δ’go to ‘H’ else go to <br>
+ next instruction.
+ 				 </section>
+ 				 <section>
+ 					 <img src="dynamic1.png" alt="">
+ 				 </section>
+ 				 <section>
+ 					 <h4>Sample input : </h4>
+ 					 <p>Vanguard six this is bravo one we are ready </p>
+ 					 <h4>Sample output: </h4>
+ 					 <p>
+ 					 10110@*^$(00001>"{^$01110&%+<#00111,.;/]00001}:">*10101@$#&^10010.[;',00100Δ10011$^#*%01001!)(&^110
+ 					 00Δ10100!)*%*01000!^%&%01001<:{(&10011Δ01001)*^$@10011Δ00010<>)(^10010*)^$*00001*&*%$10110_)(&*0
+ 					 1111Δ01111<>?:"01110$%^#@00101Δ10111*(&%*00101Δ00001;'[].10010$%#^%00101Δ10010@#$#@00101(^*%#00
+ 					 001;'[].00100$&#*%11001(^*%#00001;'[]!ΔΔΔΔΔΔΔΔΔΔ</p>
+ 				 </section>
+ 			 </section>
+
+     <section>
+
+     	<section>
+					<h2>Decryption using Turing Machine</h2>
+					<p>
+						Post-Turing instruction-abbreviations used for this example: <br>
+					</p>
+				</section>
+        <section>
+					R= Move tape right. L= Move tape Left.
+					Z= Read tape symbol.
+					H= Stop machine after successful encryption.
+					E= Stop the machine giving an error.
+					C= Check for respected symbol for the replica.
+					F= Place symbol at the start of the tape if another symbol is
+					already present place it next to the available place.
+					P= Read 5 successive 0’s and 1’s combination and send it to
+					the next state.
+					Jxxx= unconditionally go to the instruction Jxxx
+					JΔxxx= If tape symbol is ‘Δ‘go to ‘M’ state else go to next
+					state.
+					JT= Go to next instruction if the respected replica is present.
+					M= Read 10 tape symbols if all are ‘Δ ’go to ‘H’ else go to
+					next instruction.
+					G= any character other than 0’s and 1’s and ‘Δ’ discard them.
+        </section>
+				<section>
+					<img src="dynamic2decr.png" alt="">
+				</section>
+        <section>
+					Sample input:
+	 			 10110@*^$(00001>"{^$01110&%+<#00111,.;/]00001}:">
+	 			 *10101@$#&^10010.[;',00100Δ10011$^#*%01001!)(&^110
+	 			 00Δ10100!)*%*01000!^%&%01001<:{(&10011Δ01001)*^$
+	 			 @10011Δ00010<>)(^10010*)^$*00001*&*%$10110_)(&*0
+	 			 1111Δ01111<>?:"01110$%^#@00101Δ10111*(&%*00101Δ
+	 			 00001;'[].10010$%#^%00101Δ10010@#$#@00101(^*%#00
+	 			 001;'[].00100$&#*%11001(^*%#00001;'[]!ΔΔΔΔΔΔΔΔΔΔ
+	 			 Sample output:
+	 			 Vanguard six this is bravo one we are ready
+         </section>
+			</section>
+
+				
 				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
 					<h2>Background Transitions</h2>
 					<p>
@@ -390,8 +528,7 @@ Reveal.addEventListener( 'customevent', function() {
 				progress: true,
 				history: true,
 				center: true,
-
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
